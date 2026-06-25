@@ -1,0 +1,52 @@
+{
+  "mllo_type_coverage": {
+    "total_types_in_spec": 6,
+    "total_types_targeted": 5,
+    "excluded_type": "AssociationRuleModel",
+    "excluded_reason": "No natural fit in medical imaging or drug discovery domains. Apriori/FP-Growth require transaction-format data not present in any selected dataset.",
+    "coverage": [
+      {
+        "mllo_type": "ArtificialNeuralNetwork",
+        "status": "covered",
+        "dataset_ids": [1, 2, 3],
+        "dataset_names": ["PathMNIST", "ChestMNIST", "TDC.BBB_Martins"],
+        "subtypes_used": ["ConvolutionalNeuralNetwork", "MessagePassingNeuralNetwork"]
+      },
+      {
+        "mllo_type": "NonParametricModel",
+        "status": "covered",
+        "dataset_ids": [4, 5, 8, 10],
+        "dataset_names": ["TDC.DILI", "TDC.Clearance_Hepatocyte_AZ", "Breast Cancer Wisconsin", "Chronic Kidney Disease"],
+        "subtypes_used": ["GradientBoostedTree", "EnsembleModel", "SupportVectorMachine", "RandomForest"]
+      },
+      {
+        "mllo_type": "PolynomialModel",
+        "status": "covered",
+        "dataset_ids": [6, 7, 9],
+        "dataset_names": ["TDC.PPBR_AZ", "TDC.VDss_Lombardo", "Heart Disease"],
+        "subtypes_used": ["MessagePassingNeuralNetwork", "LogisticRegression"]
+      },
+      {
+        "mllo_type": "ClusteringModel",
+        "status": "covered",
+        "dataset_ids": [11],
+        "dataset_names": ["Wholesale Customers"],
+        "subtypes_used": ["KMeans"]
+      },
+      {
+        "mllo_type": "DimensionalityReductionModel",
+        "status": "covered",
+        "dataset_ids": [12],
+        "dataset_names": ["MNIST (PCA)"],
+        "subtypes_used": ["PrincipalComponentAnalysis"]
+      },
+      {
+        "mllo_type": "AssociationRuleModel",
+        "status": "excluded",
+        "dataset_ids": [],
+        "dataset_names": [],
+        "subtypes_used": []
+      }
+    ]
+  }
+}
