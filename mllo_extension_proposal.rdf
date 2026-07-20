@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY iof-av "https://spec.industrialontologies.org/ontology/annotation/">
+	<!ENTITY iof-constr "https://spec.industrialontologies.org/ontology/construct/">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+]>
+<rdf:RDF xml:base="https://example.org/ontology/mllo-extension-proposal/"
+	xmlns:iof-av="https://spec.industrialontologies.org/ontology/annotation/"
+	xmlns:iof-constr="https://spec.industrialontologies.org/ontology/construct/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+	<owl:Ontology rdf:about="https://example.org/ontology/mllo-extension-proposal/">
+		<rdfs:label xml:lang="en-us">MLLO extension proposal (draft)</rdfs:label>
+		<rdfs:comment xml:lang="en-us">Draft additions proposed in Step 8, covering the top 6 recurring gaps identified across the BreastMNIST and PathMNIST encoding exercises. Import this alongside mllo.rdf in Protege to test these additions against existing individuals without editing the original file.</rdfs:comment>
+		<owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/MachineLearningLifecycle/"/>
+	</owl:Ontology>
+
+	<!-- Proposal 1: Evaluation metrics, subclasses of PerformanceMetric -->
+
+	<owl:Class rdf:about="&iof-constr;Precision">
+		<rdfs:subClassOf rdf:resource="&iof-constr;PerformanceMetric"/>
+		<rdfs:label xml:lang="en-us">precision</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">the proportion of positive predictions made by a classification model that are actually correct</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<owl:Class rdf:about="&iof-constr;Recall">
+		<rdfs:subClassOf rdf:resource="&iof-constr;PerformanceMetric"/>
+		<rdfs:label xml:lang="en-us">recall</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">the proportion of actual positive instances that a classification model correctly identifies</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<owl:Class rdf:about="&iof-constr;F1Score">
+		<rdfs:subClassOf rdf:resource="&iof-constr;PerformanceMetric"/>
+		<rdfs:label xml:lang="en-us">F1 score</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">the harmonic mean of precision and recall for a classification model's predictions</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<owl:Class rdf:about="&iof-constr;Support">
+		<rdfs:subClassOf rdf:resource="&iof-constr;PerformanceMetric"/>
+		<rdfs:label xml:lang="en-us">support</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">the number of actual occurrences of a class in a data set used for model evaluation</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<owl:Class rdf:about="&iof-constr;AreaUnderROCCurve">
+		<rdfs:subClassOf rdf:resource="&iof-constr;PerformanceMetric"/>
+		<rdfs:label xml:lang="en-us">area under ROC curve</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">a performance metric that summarizes a classification model's ability to distinguish between classes across all classification thresholds</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<!-- Proposal 2: PyTorch, subclass of MachineLearningFramework -->
+
+	<owl:Class rdf:about="&iof-constr;PyTorch">
+		<rdfs:subClassOf rdf:resource="&iof-constr;MachineLearningFramework"/>
+		<rdfs:label xml:lang="en-us">PyTorch</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">an open-source machine learning framework used to encode and execute machine learning algorithms</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<!-- Proposal 3: CrossEntropyLoss, subclass of LossFunction -->
+
+	<owl:Class rdf:about="&iof-constr;CrossEntropyLoss">
+		<rdfs:subClassOf rdf:resource="&iof-constr;LossFunction"/>
+		<rdfs:label xml:lang="en-us">cross entropy loss</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">a loss function that measures the difference between a predicted probability distribution and the true class distribution</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<!-- Proposal 4: LearningRate, Momentum, WeightDecay, subclasses of Hyperparameter -->
+
+	<owl:Class rdf:about="&iof-constr;LearningRate">
+		<rdfs:subClassOf rdf:resource="&iof-constr;Hyperparameter"/>
+		<rdfs:label xml:lang="en-us">learning rate</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">a hyperparameter that controls the step size at each iteration of an optimization algorithm during machine learning training</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<owl:Class rdf:about="&iof-constr;Momentum">
+		<rdfs:subClassOf rdf:resource="&iof-constr;Hyperparameter"/>
+		<rdfs:label xml:lang="en-us">momentum</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">a hyperparameter that accelerates an optimization algorithm by accumulating a decaying moving average of past gradients</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<owl:Class rdf:about="&iof-constr;WeightDecay">
+		<rdfs:subClassOf rdf:resource="&iof-constr;Hyperparameter"/>
+		<rdfs:label xml:lang="en-us">weight decay</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">a hyperparameter that applies a penalty to a model's weights during optimization to reduce overfitting</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<!-- Proposal 5: DataBatchingOperation, subclass of DataProcessingOperation -->
+
+	<owl:Class rdf:about="&iof-constr;DataBatchingOperation">
+		<rdfs:subClassOf rdf:resource="&iof-constr;DataProcessingOperation"/>
+		<rdfs:label xml:lang="en-us">data batching operation</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">a data processing operation that groups a data set into fixed-size batches for iterative consumption by a training or evaluation process</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<!-- Proposal 6: Optimizer taxonomy additions -->
+
+	<owl:Class rdf:about="&iof-constr;StochasticGradientDescentOptimizer">
+		<rdfs:subClassOf rdf:resource="&iof-constr;OptimizationAlgorithm"/>
+		<rdfs:label xml:lang="en-us">stochastic gradient descent optimizer</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">an optimization algorithm that updates model parameters using the gradient computed from randomly sampled subsets of the training data</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+	<owl:Class rdf:about="&iof-constr;AdamWOptimizer">
+		<rdfs:subClassOf rdf:resource="&iof-constr;AdamOptimizer"/>
+		<rdfs:label xml:lang="en-us">AdamW optimizer</rdfs:label>
+		<iof-av:naturalLanguageDefinition xml:lang="en-us">a variant of the Adam optimizer that decouples weight decay from the gradient-based parameter update</iof-av:naturalLanguageDefinition>
+	</owl:Class>
+
+</rdf:RDF>
