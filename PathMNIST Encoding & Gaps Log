@@ -1,16 +1,4 @@
-# PathMNIST -> MLLO Encoding: Metadata Encoding and Gap Log
-
-**Task reference:** Steps 5/6 (Metadata Encoding), feeding into Step 7 (Gap Normalization) and
-Step 8 (Revision Proposal)
-**Source notebook:** MedMNIST tutorial -- PathMNIST, custom CNN architecture, SGD optimizer
-**Source ontology:** `mllo.rdf` (Machine Learning Lifecycle Ontology), imports IOF Core and BFO
-**Encoded artifact:** `PathMNIST.rdf`, 30 individuals, verified against ontology source
-**Method:** Every class and property referenced below was confirmed present in `mllo.rdf` by
-direct inspection of the ontology source file rather than assumed from general familiarity with
-OWL/ML terminology. This mirrors the verification method used for the BreastMNIST encoding and
-the Step 7/8 gap analysis.
-
----
+PathMNIST -> MLLO Encoding: Metadata Encoding and Gap Log
 
 ## 1. Source Model Specification 
 
