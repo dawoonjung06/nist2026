@@ -1,0 +1,179 @@
+# PathMNIST -> MLLO Encoding: Metadata Encoding and Gap Log
+
+**Task reference:** Steps 5/6 (Metadata Encoding), feeding into Step 7 (Gap Normalization) and
+Step 8 (Revision Proposal)
+**Source notebook:** MedMNIST tutorial -- PathMNIST, custom CNN architecture, SGD optimizer
+**Source ontology:** `mllo.rdf` (Machine Learning Lifecycle Ontology), imports IOF Core and BFO
+**Encoded artifact:** `PathMNIST.rdf`, 30 individuals, verified against ontology source
+**Method:** Every class and property referenced below was confirmed present in `mllo.rdf` by
+direct inspection of the ontology source file rather than assumed from general familiarity with
+OWL/ML terminology. This mirrors the verification method used for the BreastMNIST encoding and
+the Step 7/8 gap analysis.
+
+---
+
+## 1. Source Model Specification
+
+```python
+class Net(nn.Module):
+    def __init__(self, in_channels, num_classes):
+        super(Net, self).__init__()
+        self.layer1 = nn.Sequential(
+            nn.Conv2d(in_channels, 16, kernel_size=3),
+            nn.BatchNorm2d(16),
+            nn.ReLU()
+        )
+        self.layer2 = nn.Sequential(
+            nn.Conv2d(16, 16, kernel_size=3),
+            nn.BatchNorm2d(16),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2)
+        )
+        self.layer3 = nn.Sequential(
+            nn.Conv2d(16, 64, kernel_size=3),
+            nn.BatchNorm2d(64),
+            nn.ReLU()
+        )
+        self.layer4 = nn.Sequential(
+            nn.Conv2d(64, 64, kernel_size=3),
+            nn.BatchNorm2d(64),
+            nn.ReLU()
+        )
+        self.layer5 = nn.Sequential(
+            nn.Conv2d(64, 64, kernel_size=3, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2)
+        )
+        self.fc = nn.Sequential(
+            nn.Linear(64 * 4 * 4, 128),
+            nn.ReLU(),
+            nn.Linear(128, 128),
+            nn.ReLU(),
+            nn.Linear(128, num_classes)
+        )
+
+# Instantiation for PathMNIST (9-class multi-class classification, 3-channel input):
+model = Net(in_channels=3, num_classes=9)
+```
+
+Pipeline-level parameters: `NUM_EPOCHS=3`, `BATCH_SIZE=128` (train), `256` (eval loaders),
+optimizer `SGD(lr=0.001, momentum=0.9)`, loss `CrossEntropyLoss`, transform
+`ToTensor() -> Normalize(mean=[.5], std=[.5])`.
+
+---
+
+## 2. Encoding Table (Metadata Item -> MLLO Class -> Individual)
+
+| # | Metadata Item | MLLO Class | Individual | Verification Status |
+|---|---|---|---|---|
+| 1 | PathMNIST raw download | `iof-constr:RawDataSet` | `PathMNIST_RawData` | Confirmed in mllo.rdf |
+| 2 | Download operation | `iof-constr:DataProcessingOperation` | `DownloadPathMNISTOperation` | Confirmed (generic fallback) |
+| 3 | Train split | `iof-constr:TrainingDataSet` | `PathMNIST_TrainDataset` | Confirmed in mllo.rdf |
+| 4 | Test split | `iof-constr:TestDataSet` | `PathMNIST_TestDataset` | Confirmed in mllo.rdf |
+| 5 | `ToTensor()` | `iof-constr:TypeCastingOperation` | `ToTensorOp_PathMNIST` | Confirmed in mllo.rdf |
+| 6 | `Normalize(...)` | `iof-constr:FeatureScalingOperation` | `NormalizeOp_PathMNIST` | Confirmed in mllo.rdf |
+| 7 | Transform pipeline | `iof-constr:MachineLearningDataPreparationPipeline` | `PathMNIST_TransformPipeline` | Confirmed in mllo.rdf |
+| 8 | Transformed train set | `iof-constr:PreProcessedDataSet` | `PathMNIST_TrainDataset_Transformed` | Confirmed in mllo.rdf |
+| 9 | Conv2d x5 | `iof-constr:ConvolutionalLayer` | `ConvLayer_1` ... `ConvLayer_5` | Confirmed in mllo.rdf |
+| 10 | MaxPool2d x2 | `iof-constr:PoolingLayer` | `PoolLayer_1`, `PoolLayer_2` | Confirmed in mllo.rdf |
+| 11 | Linear x3 | `iof-constr:FullyConnectedLayer` | `FCLayer_1` ... `FCLayer_3` | Confirmed in mllo.rdf |
+| 12 | `Net` model | `iof-constr:ConvolutionalNeuralNetwork` | `PathMNIST_CustomNet` | Confirmed in mllo.rdf |
+| 13 | `BATCH_SIZE=128` | `iof-constr:BatchSize` | `BatchSize_128` | Confirmed in mllo.rdf |
+| 14 | `NUM_EPOCHS=3` | `iof-constr:EpochNumber` | `EpochNumber_3` | Confirmed in mllo.rdf |
+| 15 | Each epoch | `iof-constr:Epoch` | `Epoch_1`, `Epoch_2`, `Epoch_3` | Confirmed in mllo.rdf |
+| 16 | SGD optimizer | `iof-constr:OptimizationAlgorithm` | `SGD_Optimizer` | Generic fallback (gap, see 4.3) |
+| 17 | CrossEntropyLoss | `iof-constr:LossFunction` | `CrossEntropyLoss_Instance` | Generic fallback (gap, see 4.4) |
+| 18 | Training loop | `iof-constr:MachineLearningTraining` | `PathMNIST_Training` | Confirmed in mllo.rdf |
+| 19 | Train-set evaluation | `iof-constr:ModelEvaluation` | `PathMNIST_TrainEvaluation` | Confirmed in mllo.rdf |
+| 20 | Test-set evaluation | `iof-constr:ModelEvaluation` | `PathMNIST_TestEvaluation` | Confirmed in mllo.rdf |
+| 21 | Train accuracy 0.864 | `iof-constr:ClassificationAccuracy` | `TrainAccuracy_0.864` | Confirmed in mllo.rdf |
+| 22 | Test accuracy 0.758 | `iof-constr:ClassificationAccuracy` | `TestAccuracy_0.758` | Confirmed in mllo.rdf |
+| 23 | AUC 0.988 / 0.943 | No class exists | Not encoded | Confirmed absent (gap, see 4.2) |
+| 24 | BatchNorm2d (x5) | No class exists | Not encoded | Confirmed absent (gap, see 4.1) |
+
+**Object property assertions used** (all confirmed present in mllo.rdf): `hasDataInput`,
+`hasDataOutput`, `isComposedOf`, `executed`, `hasConfigurationVariable`.
+**Data property assertions used:** `hasConfigurationSettingValue` (integer and decimal literals).
+
+---
+
+## 3. Encoding Integrity Notes
+
+The following were identified as encoding-process errors during verification of the produced
+`PathMNIST.rdf` artifact against this table -- listed for completeness and correction prior to
+submission, and distinguished explicitly from genuine ontology gaps in Section 4:
+
+| # | Individual | Issue | Correction |
+|---|---|---|---|
+| 1 | `PathMNIST_TestDataset` | No `rdf:type` asserted | Assign `TestDataSet` |
+| 2 | `PathMNIST_TrainDataset` | Dual-typed as both `TestDataSet` and `TrainingDataSet` | Remove `TestDataSet` type |
+| 3 | `PathMNIST_TestEvaluation` | `hasDataInput` erroneously includes the train dataset | Remove the extraneous link |
+| 4 | `PathMNIST_TrainEvaluation` | No object property assertions present | Add `hasDataInput`, `executed` |
+| 5 | `PathMNIST_Training` | No `rdf:type` asserted | Assign `MachineLearningTraining` |
+| 6 | `PathMNIST_TransformPipeline` | `isComposedOf` links to constituent operations absent | Add links to `ToTensorOp_PathMNIST`, `NormalizeOp_PathMNIST` |
+| 7 | `Epoch_1`-`Epoch_3` | Not linked to `PathMNIST_Training` as temporal parts | Add appropriate part-of assertion |
+| 8 | `CrossEntropyLoss_Instance` | Not linked to `PathMNIST_Training` via `executed` | Add link |
+
+These are corrections to the encoded artifact and are not proposed as ontology changes.
+
+---
+
+## 4. Confirmed Ontology Gaps
+
+Each gap below was confirmed by direct inspection of `mllo.rdf` (searching the class hierarchy
+under the relevant superclass and finding no matching subclass), not inferred from absence in
+the encoding table alone.
+
+### 4.1 No Batch Normalization Class
+No class in MLLO represents batch normalization. This model applies `nn.BatchNorm2d` after every
+one of its 5 convolutional layers -- the single most frequently recurring unencodable element in
+this artifact.
+
+### 4.2 No Evaluation Metric Classes Beyond Accuracy
+Only `iof-constr:ClassificationAccuracy` exists as a concrete subclass of `PerformanceMetric`.
+Precision, Recall, F1, Support, and AUC/ROC have no representation. This model's AUC scores
+(0.988 train, 0.943 test) cannot be encoded as individuals under any existing class.
+
+### 4.3 Thin Optimizer Taxonomy
+Only `iof-constr:AdamOptimizer` exists as a named subclass of `OptimizationAlgorithm`. SGD, the
+optimizer used in this notebook, has no dedicated class and falls back to the generic
+`OptimizationAlgorithm`.
+
+### 4.4 No Named Loss Function Subclasses
+`iof-constr:LossFunction` has no subclasses. `CrossEntropyLoss`, used in this notebook, falls
+back to the generic class.
+
+### 4.5 Incomplete Hyperparameter Taxonomy
+`BatchSize` and `EpochNumber` exist as named subclasses of `Hyperparameter`, but `LearningRate`
+and `Momentum` -- both explicitly set in this notebook (`lr=0.001`, `momentum=0.9`) -- do not,
+producing an inconsistent level of granularity within the same ontology section.
+
+### 4.6 No Architecture Provenance Distinction
+This hand-built `Net` and the pretrained ResNet18 used in the BreastMNIST encoding both
+instantiate the same `ConvolutionalNeuralNetwork` class with no property to record whether a
+model's weights originate from scratch or from a pretrained source.
+
+### 4.7 No Data-Loading/Batching Operation Subtype
+The download operation and any DataLoader-equivalent both fall back to the generic
+`DataProcessingOperation`, with no subtype for batching or iterative data consumption.
+
+### 4.8 No PyTorch Framework Class
+`MachineLearningFramework` has named subclasses for `Tensorflow` and `Keras` only. Both
+encodings performed in this project (BreastMNIST, PathMNIST) are PyTorch-based and cannot record
+framework provenance.
+
+---
+
+## 5. Disposition
+
+Gaps 4.1 through 4.8 above are carried forward into the Step 7 normalized gap summary, where
+each is cross-referenced against the equivalent BreastMNIST encoding to determine recurrence.
+Gaps confirmed in both encodings (4.2, 4.3, 4.4, 4.5, 4.7, 4.8) are treated as higher-priority
+in the Step 8 revision proposal; gaps specific to this encoding alone (4.1, 4.6) are noted as
+likely to recur once additional CNN-based examples are encoded, but are not yet confirmed
+systemic.
+
+The concrete class additions addressing gaps 4.1-4.8 are specified in
+`step8_mllo_revision_proposal.md` and implemented as a testable OWL module in
+`mllo_extension_proposal.rdf`, both included in this repository.
