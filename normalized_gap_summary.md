@@ -1,4 +1,4 @@
-# Step 7 — Normalized Gap Summary
+#Normalized Gap Summary
 
 Source logs: BreastMNIST/ResNet18 gap log (11 items) + PathMNIST/CustomNet gap log (8 items).
 This step merges duplicates, groups by theme, and ranks by recurrence — how many of the two
