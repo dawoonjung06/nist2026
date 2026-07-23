@@ -1,69 +1,30 @@
 # PathMNIST
 
 ## Overview
+- **Source:** MedMNIST — https://medmnist.com/
+- **Domain:** Medical imaging — colon pathology
+- **Task:** Multi-class classification (9 tissue types)
+- **Data modality:** Pathology microscope images
+- **Image size:** 28×28 pixels (also available in 64, 128, 224)
+- **License:** CC BY 4.0
 
-| Field | Value |
-|---|---|
-| **Source** | MedMNIST |
-| **Source URL** | https://medmnist.com/ |
-| **Domain** | Medical Imaging |
-| **Task** | Multi-class classification of colon pathology images |
-| **MLLO Type** | `ArtificialNeuralNetwork` |
-| **Best Model** | ResNet-50 |
+## Dataset Size
+- Total: ~107,180 samples
+- Train: 89,996 / Validation: 10,004 / Test: 7,180
 
----
-
-## Dataset Details
-
-| Field | Value |
-|---|---|
-| **Dataset size** | 107,180 images |
-| **Input type** | Image — 28×28 RGB |
-| **Output type** | Categorical label (9 classes) |
-| **Number of classes** | 9 colon tissue types |
-| **Train / Val / Test split** | 89,996 / 10,004 / 7,180 |
-| **Missing values** | None |
-
-### Classes
-1. Adipose tissue
-2. Background
-3. Debris
-4. Lymphocytes
-5. Mucus
-6. Smooth muscle
-7. Normal colon mucosa
-8. Cancer-associated stroma
-9. Colorectal adenocarcinoma epithelium
-
----
-
-## Best Model
-
-| Field | Value |
-|---|---|
-| **Model** | ResNet-50 |
-| **Model type** | Convolutional Neural Network |
-| **Reference** | He et al., 2016 — Deep Residual Learning for Image Recognition |
-| **Reported AUC** | ~0.990 |
-| **Framework** | PyTorch / torchvision |
-
----
+## Models and Performance
+| Model | AUC | ACC |
+|---|---|---|
+| ResNet-50 (28) | 0.990 | 0.911 |
+| ResNet-18 (28) | 0.983 | 0.907 |
+| auto-sklearn | 0.934 | 0.716 |
+| AutoKeras | 0.959 | 0.834 |
+| Google AutoML Vision | 0.944 | 0.728 |
 
 ## MLLO Encoding
+- **MLLO Model Type:** ArtificialNeuralNetwork → ConvolutionalNeuralNetwork
+- **Selected model for encoding:** ResNet-50 (28)
+- **Performance metric:** AUC, ACC
+- **Dataset split:** Train / Validation / Test****
 
-| MLLO Field | Value |
-|---|---|
-| `mllo_type` | `ArtificialNeuralNetwork` |
-| `mllo_subtype` | `ConvolutionalNeuralNetwork` |
-| `task_type` | `MultiClassClassification` |
-| `input_type` | `Image` |
-| `output_type` | `CategoricalLabel` |
-
-**Encoding gaps:** None — clean MLLO fit.
-
----
-
-## Links
-- Dataset: https://medmnist.com/
-- Paper: https://arxiv.org/abs/2110.14795
-- Leaderboard: https://paperswithcode.com/dataset/pathmnist
+file link: https://medmnist.com/
