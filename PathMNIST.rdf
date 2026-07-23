@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/"
+     xml:base="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:iof-av="https://spec.industrialontologies.org/ontology/annotation/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:iof-ind="https://spec.industrialontologies.org/ontology/individual/"
+     xmlns:construct="https://spec.industrialontologies.org/ontology/construct/">
+    <owl:Ontology rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/">
+        <owl:versionIRI rdf:resource="https://spec.industrialontologies.org/ontology/202601/machinelearninglifecycle/AboutIOFDev/"/>
+        <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/core/Core/"/>
+        <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/"/>
+        <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/MachineLearningLifecycle/"/>
+        <dcterms:abstract>This ontology defines the scope of provisional maturity level machine learning lifecycle ontologies.</dcterms:abstract>
+        <dcterms:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://opensource.org/licenses/MIT</dcterms:license>
+        <rdfs:label xml:lang="en-us">About Machine Learning Lifecycle Development</rdfs:label>
+        <iof-av:copyright>Copyright (c) 2026 Open Applications Group</iof-av:copyright>
+        <iof-av:maturity rdf:resource="https://spec.industrialontologies.org/ontology/individual/Provisional"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/BatchSize_128 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/BatchSize_128">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/BatchSize"/>
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</construct:hasConfigurationSettingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_1 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_1">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ConvolutionalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_2 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_2">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ConvolutionalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_3 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_3">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ConvolutionalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_4 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_4">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ConvolutionalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_5 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_5">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ConvolutionalLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/CrossEntropyLoss_Instance -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/CrossEntropyLoss_Instance">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/LossFunction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/DownloadPathMNISTOperation -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/DownloadPathMNISTOperation">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/DataProcessingOperation"/>
+        <construct:hasDataOutput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_RawData"/>
+        <construct:hasDataOutput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TestDataset"/>
+        <construct:hasDataOutput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/EpochNumber_3 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/EpochNumber_3">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/EpochNumber"/>
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</construct:hasConfigurationSettingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/Epoch_1 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/Epoch_1">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/Epoch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/Epoch_2 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/Epoch_2">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/Epoch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/Epoch_3 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/Epoch_3">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/Epoch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_1 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_1">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/FullyConnectedLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_2 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_2">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/FullyConnectedLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_3 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_3">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/FullyConnectedLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/NormalizeOp_PathMNIST -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/NormalizeOp_PathMNIST">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/FeatureScalingOperation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_CustomNet -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_CustomNet">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ConvolutionalNeuralNetwork"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_1"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_2"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_3"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_4"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ConvLayer_5"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_1"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_2"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/FCLayer_3"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PoolLayer_1"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PoolLayer_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_RawData -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_RawData">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/RawDataSet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TestDataset -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TestDataset">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/TestDataSet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TestEvaluation -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TestEvaluation">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ModelEvaluation"/>
+        <construct:executed rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_CustomNet"/>
+        <construct:hasDataInput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TestDataset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/TrainingDataSet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset_Transformed -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset_Transformed">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/PreProcessedDataSet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainEvaluation -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainEvaluation">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ModelEvaluation"/>
+        <construct:executed rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_CustomNet"/>
+        <construct:hasDataInput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_Training -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_Training">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/MachineLearningTraining"/>
+        <construct:executed rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_CustomNet"/>
+        <construct:executed rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/SGD_Optimizer"/>
+        <construct:hasConfigurationVariable rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/BatchSize_128"/>
+        <construct:hasConfigurationVariable rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/EpochNumber_3"/>
+        <construct:hasDataInput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset_Transformed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TransformPipeline -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TransformPipeline">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/MachineLearningDataPreparationPipeline"/>
+        <construct:hasDataInput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset"/>
+        <construct:hasDataOutput rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PathMNIST_TrainDataset_Transformed"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/NormalizeOp_PathMNIST"/>
+        <construct:isComposedOf rdf:resource="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ToTensorOp_PathMNIST"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PoolLayer_1 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PoolLayer_1">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/PoolingLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PoolLayer_2 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/PoolLayer_2">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/PoolingLayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/SGD_Optimizer -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/SGD_Optimizer">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/OptimizationAlgorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/TestAccuracy_0.758 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/TestAccuracy_0.758">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ClassificationAccuracy"/>
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.758</construct:hasConfigurationSettingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ToTensorOp_PathMNIST -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/ToTensorOp_PathMNIST">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/TypeCastingOperation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/TrainAccuracy_0.864 -->
+
+    <owl:NamedIndividual rdf:about="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/TrainAccuracy_0.864">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ClassificationAccuracy"/>
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.864</construct:hasConfigurationSettingValue>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
