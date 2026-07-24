@@ -1,0 +1,53 @@
+PathMNIST MLLO Revision 
+
+
+# Proposed Classes
+
+| New Class | Reason |
+|-----------|--------|
+| BatchNormalizationLayer | Represents BatchNorm2d layers |
+| SGDOptimizer | Represents stochastic gradient descent |
+| CrossEntropyLoss | Represents CrossEntropyLoss |
+| LearningRate | Represents learning-rate hyperparameters |
+| Momentum | Represents optimizer momentum |
+| AreaUnderROCCurve | Represents AUC evaluation metrics |
+| PyTorch | Represents the PyTorch framework |
+| DataLoadingOperation | Represents dataset loading |
+| DataBatchingOperation | Represents batching operations |
+| FromScratchModel | Distinguishes custom-trained models |
+
+---
+
+# Proposed Object Properties
+
+| Property | Purpose |
+|----------|---------|
+| usesFramework | Training → framework |
+| usesLossFunction | Training → loss |
+| hasEvaluationMetric | Evaluation → metrics |
+| hasEpoch | Training → epochs |
+| hasModelProvenance | Model → pretrained/custom |
+
+---
+# PathMNIST Re-encoding Comparison
+
+| Original Encoding | Revised Encoding |
+|-------------------|-----------------|
+| OptimizationAlgorithm | SGDOptimizer |
+| LossFunction | CrossEntropyLoss |
+| DataProcessingOperation | DataLoadingOperation |
+| No BatchNorm representation | Five BatchNormalizationLayer individuals |
+| No AUC | AreaUnderROCCurve individuals |
+| No LearningRate | LearningRate individual |
+| No Momentum | Momentum individual |
+| No PyTorch | PyTorch framework individual |
+| No batching operation | DataBatchingOperation |
+| No model provenance | FromScratchModel |
+
+---
+
+## Overall Improvement
+
+The revised encoding captures more information from the original implementation while reducing reliance on generic classes.
+
+Most previously identified ontology gaps are now represented using dedicated ontology classes and properties.
