@@ -10,10 +10,12 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:construct="https://spec.industrialontologies.org/ontology/construct/"
-     xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
+     xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/"
+     xmlns:breastmnist="https://w3id.org/mllo-extension/breastmnist#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO">
         <owl:imports rdf:resource="https://github.com/example/breastmnist-mllo/BreastMNIST_Encoding"/>
         <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/202601/machinelearninglifecycle/MachineLearningLifecycle/"/>
+        <owl:imports rdf:resource="https://w3id.org/mllo-extension/breastmnist"/>
     </owl:Ontology>
     
 
@@ -29,10 +31,204 @@
     
 
 
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_0">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#ClassLabel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastF1_Class0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastF1_Class0">
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_0"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_F1"/>
+        <breastmnist:hasMetricValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.83</breastmnist:hasMetricValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastF1_Class1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastF1_Class1"/>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastLearningRate_0_0001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastLearningRate_0_0001">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#LearningRate"/>
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0001</construct:hasConfigurationSettingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPrecision_Class0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPrecision_Class0">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#MetricResult"/>
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_0"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Precision"/>
+        <breastmnist:hasMetricValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.85</breastmnist:hasMetricValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPrecision_Class1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPrecision_Class1">
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_1"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Precision"/>
+        <breastmnist:hasMetricValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.93</breastmnist:hasMetricValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPyTorch_Framework -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPyTorch_Framework">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#PyTorch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastRecall_Class0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastRecall_Class0">
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_0"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Recall"/>
+        <breastmnist:hasMetricValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.81</breastmnist:hasMetricValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastRecall_Class1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastRecall_Class1">
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_1"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Recall"/>
+        <breastmnist:hasMetricValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.95</breastmnist:hasMetricValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastResNet18_DefaultWeights -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastResNet18_DefaultWeights">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#PretrainedModelParameterArtifact"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastSupport_Class0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastSupport_Class0">
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_0"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Support"/>
+        <breastmnist:hasSupportCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</breastmnist:hasSupportCount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastSupport_Class1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastSupport_Class1">
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_1"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Support"/>
+        <breastmnist:hasSupportCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">114</breastmnist:hasSupportCount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastTestBatchingOperation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastTestBatchingOperation">
+        <construct:hasConfigurationVariable rdf:resource="https://github.com/example/breastmnist-mllo#BreastBatchSize_32"/>
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestDataset_Transformed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastTrainBatchingOperation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastTrainBatchingOperation">
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTrainDataset_Transformed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastValBatchingOperation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastValBatchingOperation">
+        <construct:hasConfigurationVariable rdf:resource="https://github.com/example/breastmnist-mllo#BreastBatchSize_32"/>
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastValDataset_Transformed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastWeightDecay_0_0001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastWeightDecay_0_0001">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#WeightDecay"/>
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0001</construct:hasConfigurationSettingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_F1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_F1">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#F1Score"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Precision -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Precision">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#Precision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Recall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Recall">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#Recall"/>
+        <breastmnist:evaluatesClassLabel rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastClassLabel_1"/>
+        <breastmnist:usesMetric rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_F1"/>
+        <breastmnist:hasMetricValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.94</breastmnist:hasMetricValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Support -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#Metric_Support">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#SupportCount"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://github.com/example/breastmnist-mllo#BreastBatchSize_32 -->
 
     <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastBatchSize_32">
         <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</construct:hasConfigurationSettingValue>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastCrossEntropyLoss -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastCrossEntropyLoss">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#CrossEntropyLoss"/>
     </rdf:Description>
     
 
@@ -45,10 +241,44 @@
     
 
 
+    <!-- https://github.com/example/breastmnist-mllo#BreastGrayscaleEvalOp -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastGrayscaleEvalOp">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#GrayscaleConversionOperation"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastGrayscaleTo3ChannelOp -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastGrayscaleTo3ChannelOp">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#GrayscaleConversionOperation"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastRandomHorizontalFlipOp -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastRandomHorizontalFlipOp">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#RandomHorizontalFlipOperation"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastRandomRotation10Op -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastRandomRotation10Op">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#RandomRotationOperation"/>
+    </rdf:Description>
+    
+
+
     <!-- https://github.com/example/breastmnist-mllo#BreastResNet18_Pretrained -->
 
     <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastResNet18_Pretrained">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#PretrainedModel"/>
         <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastFCLayer_Binary"/>
+        <breastmnist:usesPretrainedParameters rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastResNet18_DefaultWeights"/>
     </rdf:Description>
     
 
@@ -61,6 +291,8 @@
         <construct:hasConfigurationVariable rdf:resource="https://github.com/example/breastmnist-mllo#BreastBatchSize_32"/>
         <construct:hasConfigurationVariable rdf:resource="https://github.com/example/breastmnist-mllo#BreastEpochNumber_11"/>
         <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTrainDataset_Transformed"/>
+        <breastmnist:usesFramework rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPyTorch_Framework"/>
+        <breastmnist:usesLossFunction rdf:resource="https://github.com/example/breastmnist-mllo#BreastCrossEntropyLoss"/>
     </rdf:Description>
     
 
@@ -78,6 +310,15 @@
     <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastTestEvaluation">
         <construct:executed rdf:resource="https://github.com/example/breastmnist-mllo#BreastResNet18_Pretrained"/>
         <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestDataset_Transformed"/>
+        <breastmnist:hasEvaluationMetric rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestAccuracy_0_9103"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastF1_Class0"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastF1_Class1"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPrecision_Class0"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastPrecision_Class1"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastRecall_Class0"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastRecall_Class1"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastSupport_Class0"/>
+        <breastmnist:hasMetricResult rdf:resource="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO#BreastSupport_Class1"/>
     </rdf:Description>
     
 
@@ -108,6 +349,14 @@
     
 
 
+    <!-- https://github.com/example/breastmnist-mllo#BreastValDataset -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastValDataset">
+        <rdf:type rdf:resource="https://spec.industrialontologies.org/ontology/construct/ValidationDataSet"/>
+    </rdf:Description>
+    
+
+
     <!-- https://github.com/example/breastmnist-mllo#BreastValTransformPipeline -->
 
     <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastValTransformPipeline">
@@ -123,6 +372,7 @@
     <!-- https://github.com/example/breastmnist-mllo#LoadBreastMNISTOperation -->
 
     <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#LoadBreastMNISTOperation">
+        <rdf:type rdf:resource="https://w3id.org/mllo-extension/breastmnist#DataLoadingOperation"/>
         <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastMNIST224_RawData"/>
         <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestDataset"/>
         <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTrainDataset"/>
