@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO/"
+     xml:base="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:construct="https://spec.industrialontologies.org/ontology/construct/"
+     xmlns:annotation="https://spec.industrialontologies.org/ontology/annotation/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO">
+        <owl:imports rdf:resource="https://github.com/example/breastmnist-mllo/BreastMNIST_Encoding"/>
+        <owl:imports rdf:resource="https://spec.industrialontologies.org/ontology/202601/machinelearninglifecycle/MachineLearningLifecycle/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastBatchSize_32 -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastBatchSize_32">
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</construct:hasConfigurationSettingValue>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastEpochNumber_11 -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastEpochNumber_11">
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</construct:hasConfigurationSettingValue>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastResNet18_Pretrained -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastResNet18_Pretrained">
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastFCLayer_Binary"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastResNet18_Training -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastResNet18_Training">
+        <construct:executed rdf:resource="https://github.com/example/breastmnist-mllo#BreastAdamW_Optimizer"/>
+        <construct:executed rdf:resource="https://github.com/example/breastmnist-mllo#BreastResNet18_Pretrained"/>
+        <construct:hasConfigurationVariable rdf:resource="https://github.com/example/breastmnist-mllo#BreastBatchSize_32"/>
+        <construct:hasConfigurationVariable rdf:resource="https://github.com/example/breastmnist-mllo#BreastEpochNumber_11"/>
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTrainDataset_Transformed"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastTestAccuracy_0_9103 -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastTestAccuracy_0_9103">
+        <construct:hasConfigurationSettingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9103</construct:hasConfigurationSettingValue>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastTestEvaluation -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastTestEvaluation">
+        <construct:executed rdf:resource="https://github.com/example/breastmnist-mllo#BreastResNet18_Pretrained"/>
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestDataset_Transformed"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastTestTransformPipeline -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastTestTransformPipeline">
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestDataset"/>
+        <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestDataset_Transformed"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastGrayscaleEvalOp"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastNormalizeEvalOp"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastToTensorEvalOp"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastTrainTransformPipeline -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastTrainTransformPipeline">
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTrainDataset"/>
+        <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTrainDataset_Transformed"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastGrayscaleTo3ChannelOp"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastNormalizeTrainOp"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastRandomHorizontalFlipOp"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastRandomRotation10Op"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastToTensorTrainOp"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#BreastValTransformPipeline -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#BreastValTransformPipeline">
+        <construct:hasDataInput rdf:resource="https://github.com/example/breastmnist-mllo#BreastValDataset"/>
+        <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastValDataset_Transformed"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastGrayscaleEvalOp"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastNormalizeEvalOp"/>
+        <construct:isComposedOf rdf:resource="https://github.com/example/breastmnist-mllo#BreastToTensorEvalOp"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://github.com/example/breastmnist-mllo#LoadBreastMNISTOperation -->
+
+    <rdf:Description rdf:about="https://github.com/example/breastmnist-mllo#LoadBreastMNISTOperation">
+        <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastMNIST224_RawData"/>
+        <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTestDataset"/>
+        <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastTrainDataset"/>
+        <construct:hasDataOutput rdf:resource="https://github.com/example/breastmnist-mllo#BreastValDataset"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
