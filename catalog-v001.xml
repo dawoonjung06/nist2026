@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="https://w3id.org/mllo-extension/breastmnist" uri="file:/Users/oliviajungd/Downloads/MLLO_BreastMNIST_Original.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public">
+        <uri id="Automatically generated entry, Timestamp=1785258989174" name="http://www.semanticweb.org/oliviajungd/ontologies/2026/6/BreastMNIST_Original_MLLO/" uri="BreastMNIST_Original_MLLO.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1785258989174" name="https://example.org/ontology/mllo-extension-proposal/" uri="mllo_extension_proposal.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1785258989174" name="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/AboutIOFDev/" uri="PathMNIST.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1785258989174" name="https://spec.industrialontologies.org/ontology/machinelearninglifecycle/PathMNIST_Revised/" uri="PathMNIST_Revised.rdf"/>
+    </group>
+</catalog>
